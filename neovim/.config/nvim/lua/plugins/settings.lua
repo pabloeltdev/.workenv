@@ -57,11 +57,15 @@ return {
     },
     config = function ()
       local plugin = require('lint')
-      vim.api.nvim_create_autocmd({ "BufWritePost", 'InsertLeave', 'TextChanged' }, {
-        callback = function()
-          plugin.try_lint()
-        end,
-      })
+      plugin.linters_by_ft = {}
+      vim.api.nvim_create_autocmd(
+        { "BufWritePost", 'InsertLeave', 'TextChanged' },
+        {
+          callback = function()
+            plugin.try_lint()
+          end,
+        }
+      )
     end
   },
   {
