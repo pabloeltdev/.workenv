@@ -1,8 +1,10 @@
 return {
   {
     "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    -- build = ":Neorg sync-parsers",
+    dependencies = { "nvim-lua/plenary.nvim", "luarocks.nvim" },
+    lazy = false,
+    version = "*", 
     config = function()
       require("neorg").setup {
         load = {
@@ -16,8 +18,9 @@ return {
           ["core.dirman"] = { -- Manages Neorg workspaces
             config = {
               workspaces = {
-                games = "~/Documents/Workspaces/notes/games",
-                work = "~/Documents/Workspaces/notes/work",
+                games = "~/Workspaces/notes/games",
+                work = "~/Workspaces/notes/work",
+                travel = "~/Workspaces/notes/travel",
               },
             },
           },

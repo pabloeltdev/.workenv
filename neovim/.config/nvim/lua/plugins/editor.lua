@@ -1,13 +1,5 @@
 return {
   {
-    "benlubas/molten-nvim",
-    version = "^1.0.0",
-    build = ":UpdateRemotePlugins",
-    init = function()
-      vim.g.molten_output_win_max_height = 12
-    end,
-  },
-  {
     "folke/todo-comments.nvim",
     opts = {},
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -23,12 +15,23 @@ return {
     opts = {},
   },
   {
-    'numToStr/Comment.nvim',
-    opts = {},
-    lazy = false,
-  },
-  {
     { 'echasnovski/mini.nvim', version = false },
-    { 'echasnovski/mini.surround', version = false },
+    { 'echasnovski/mini.surround', version = false, config = true },
+    { 'echasnovski/mini.pairs', version = false, config = true },
+    { 'echasnovski/mini.cursorword', version = false, config = true },
+    { 'echasnovski/mini.ai', version = false, config = true },
+    { 'echasnovski/mini.comment', version = false, config = true },
+    { 'echasnovski/mini.indentscope', version = false, config = true },
+    {
+      'echasnovski/mini.basics',
+      version = false,
+      opts = {
+        mappings = {
+          windows = true,
+          move_with_alt = true,
+        },
+      },
+    },
   }
 }
+

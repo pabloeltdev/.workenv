@@ -36,8 +36,10 @@ return {
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diagnostics'},
         lualine_c = {'buffers'},
-        lualine_x = {'encoding', 'fileformat', 'filetype'},
-        lualine_y = {'progress'},
+        -- lualine_x = {'encoding', 'fileformat', 'filetype'},
+        lualine_x = {},
+        -- lualine_y = {'progress'},
+        lualine_y = {},
         lualine_z = {'location'}
       },
     },
@@ -47,7 +49,15 @@ return {
     opts = {},
   },
   {
+      "vhyrro/luarocks.nvim",
+      priority = 1001, -- this plugin needs to run before anything else
+      opts = {
+          rocks = { "magick" },
+      },
+  },
+  {
     '3rd/image.nvim',
+    dependencies = { "luarocks.nvim" },
     opts = {
       tmux_show_only_in_active_window = true,
       window_overlap_clear_enabled = true,
