@@ -15,12 +15,18 @@ return {
     opts = {},
   },
   {
-    { 'echasnovski/mini.nvim', version = false },
-    { 'echasnovski/mini.surround', version = false, config = true },
-    { 'echasnovski/mini.pairs', version = false, config = true },
-    { 'echasnovski/mini.cursorword', version = false, config = true },
-    { 'echasnovski/mini.ai', version = false, config = true },
-    { 'echasnovski/mini.comment', version = false, config = true },
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = true,
+  },
+  {
+    { 'echasnovski/mini.nvim',        version = false },
+    { 'echasnovski/mini.surround',    version = false, config = true },
+    { 'echasnovski/mini.pairs',       version = false, config = true },
+    { 'echasnovski/mini.cursorword',  version = false, config = true },
+    { 'echasnovski/mini.ai',          version = false, config = true },
+    { 'echasnovski/mini.comment',     version = false, config = true },
     { 'echasnovski/mini.indentscope', version = false, config = true },
     {
       'echasnovski/mini.basics',
@@ -34,4 +40,3 @@ return {
     },
   }
 }
-
