@@ -13,7 +13,8 @@ return {
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-vsnip',
-      'hrsh7th/vim-vsnip'
+      'hrsh7th/vim-vsnip',
+      { 'rafamadriz/friendly-snippets', lazy = true },
     },
     version = false, -- last release is way too old
     event = 'InsertEnter',
@@ -34,7 +35,7 @@ return {
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
           ['<C-Space>'] = cmp.mapping.complete(),
           ['<C-e>'] = cmp.mapping.abort(),
-          ['<CR>'] = cmp.mapping.confirm({ select = false }),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
@@ -71,8 +72,23 @@ return {
     end,
   },
   {
-    "ray-x/lsp_signature.nvim",
-    event = "VeryLazy",
+    'ray-x/lsp_signature.nvim',
+    event = 'VeryLazy',
     opts = {},
-  }
+  },
+  {
+    'stevearc/conform.nvim',
+    opts = {
+      format_on_save = {
+        timeout_ms = 500,
+        lsp_format = "fallback",
+      },
+      formatters_by_ft = {
+        lua = { 'stylua' },
+        javascript = { { 'prettier', 'ast-grep' } },
+        vue = { 'prettier' },
+        typescriptreact = { 'prettier' },
+      },
+    },
+  },
 }

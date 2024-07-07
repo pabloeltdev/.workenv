@@ -3,7 +3,7 @@ return {
   {
     'xiyaowong/transparent.nvim',
     lazy = false,
-    config = function ()
+    config = function()
       local m = require('transparent')
       m.clear_prefix('NeoTree')
       m.clear_prefix('ToggleTerm')
@@ -33,14 +33,14 @@ return {
       },
       extensions = { 'neo-tree', 'lazy', 'mason', 'toggleterm' },
       sections = {
-        lualine_a = {'mode'},
-        lualine_b = {'branch', 'diagnostics'},
-        lualine_c = {'buffers'},
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch', 'diagnostics' },
+        lualine_c = { 'buffers' },
         -- lualine_x = {'encoding', 'fileformat', 'filetype'},
         lualine_x = {},
         -- lualine_y = {'progress'},
         lualine_y = {},
-        lualine_z = {'location'}
+        lualine_z = { 'location' }
       },
     },
   },
@@ -49,11 +49,15 @@ return {
     opts = {},
   },
   {
-      "vhyrro/luarocks.nvim",
-      priority = 1001, -- this plugin needs to run before anything else
-      opts = {
-          rocks = { "magick" },
-      },
+    'folke/zen-mode.nvim',
+    config = true,
+  },
+  {
+    'vhyrro/luarocks.nvim',
+    priority = 1001, -- this plugin needs to run before anything else
+    opts = {
+      rocks = { "magick" },
+    },
   },
   {
     '3rd/image.nvim',

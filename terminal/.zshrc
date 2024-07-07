@@ -28,3 +28,13 @@ autoload -Uz compinit && compinit
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# Kitty sessions
+function kt-native() {
+  export PROJECT_DIR=$1
+  kitty --session ~/.config/kitty/sessions/native.conf
+}
+
+function kt-nuxt() {
+  export PROJECT_DIR=$1
+  kitty --session ~/.config/kitty/sessions/nuxt.conf
+}
