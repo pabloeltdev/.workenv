@@ -38,3 +38,8 @@ function kt-nuxt() {
   export PROJECT_DIR=$1
   kitty --session ~/.config/kitty/sessions/nuxt.conf
 }
+
+function kt-next() {
+  export PROJECT_DIR=$1
+  kitty --session ~/.config/kitty/sessions/next.conf
+}

@@ -8,6 +8,7 @@ return {
     version = "*",
     config = true,
   },
+  -- use jk for escape
   {
     "max397574/better-escape.nvim",
     opts = {},
