@@ -16,34 +16,38 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		cmd = "Telescope",
-		opts = {
-			extensions = {
-				file_browser = {
-					auto_depth = true,
-				},
-			},
-		},
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{
 		"nvim-telescope/telescope-file-browser.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-	},
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		priority = 999,
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-			"3rd/image.nvim",
-		},
-		opts = {
-			window = {
-				mappings = {
-					["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
+		config = function()
+			require("telescope").setup({
+				extensions = {
+					file_browser = {
+						hijack_netrw = true,
+						auto_depth = true,
+					},
 				},
-			},
-		},
+			})
+			require("telescope").load_extension("file_browser")
+		end,
 	},
+	-- {
+	-- 	"nvim-neo-tree/neo-tree.nvim",
+	-- 	priority = 999,
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"3rd/image.nvim",
+	-- 	},
+	-- 	opts = {
+	-- 		window = {
+	-- 			mappings = {
+	-- 				["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
 }

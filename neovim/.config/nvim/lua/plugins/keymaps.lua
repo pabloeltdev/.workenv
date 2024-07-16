@@ -16,7 +16,7 @@ return {
 						e = { "<cmd>EslintFixAll<cr>", "Fix all (eslint)" },
 						h = { "<cmd>noh<cr>", "Clear highlights" },
 					},
-					e = { "<cmd>Neotree toggle<cr>", "Explorer" },
+					-- e = { "<cmd>Neotree toggle<cr>", "Explorer" },
 					l = { "<cmd>Lazy<cr>", "Lazyvim" },
 					m = { "<cmd>Mason<cr>", "Mason" },
 					s = {
