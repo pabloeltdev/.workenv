@@ -30,7 +30,6 @@ return {
 					},
 					p = {
 						name = "Project",
-						f = { "<cmd>TodoTelescope<cr>", "Fix/Todo" },
 						t = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Show all troubles in project" },
 					},
 					q = {
@@ -40,12 +39,14 @@ return {
 						r = { ":%s/\\<<C-r><C-w>\\>//g<left><left>", "Replace word" },
 						s = { "<cmd>w<cr>", "Save file" },
 						t = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
-						n = { "<cmd>Telescope notify<cr>", "Show notifications" },
 					},
 					t = {
+						name = "Telescope",
 						b = { "<cmd>Telescope file_browser<cr>", "Browse files" },
+						d = { "<cmd>TodoTelescope<cr>", "Fix/Todo" },
 						f = { "<cmd>Telescope find_files<cr>", "Find file" },
 						g = { "<cmd>Telescope live_grep<cr>", "Grep files" },
+						n = { "<cmd>Telescope notify<cr>", "Show notifications" },
 					},
 				},
 				g = {
