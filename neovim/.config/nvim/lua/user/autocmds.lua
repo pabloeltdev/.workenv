@@ -17,9 +17,9 @@ end
 
 local autoCommands = {
 	-- other autocommands
-	open_folds = {
-		{ "BufReadPost,FileReadPost", "*", "normal zR" },
-	},
+	-- open_folds = {
+	-- 	{ "BufReadPost,FileReadPost", "*", "normal zR" },
+	-- },
 }
 
 M.nvim_create_augroups(autoCommands)
