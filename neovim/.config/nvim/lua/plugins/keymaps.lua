@@ -16,7 +16,6 @@ return {
 						e = { "<cmd>EslintFixAll<cr>", "Fix all (eslint)" },
 						h = { "<cmd>noh<cr>", "Clear highlights" },
 					},
-					-- e = { "<cmd>Neotree toggle<cr>", "Explorer" },
 					l = { "<cmd>Lazy<cr>", "Lazyvim" },
 					m = { "<cmd>Mason<cr>", "Mason" },
 					s = {
@@ -31,6 +30,7 @@ return {
 					p = {
 						name = "Project",
 						t = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Show all troubles in project" },
+						e = { "<cmd>Neotree toggle<cr>", "Explorer" },
 					},
 					q = {
 						name = "Quick actions",

@@ -33,21 +33,24 @@ return {
 			require("telescope").load_extension("file_browser")
 		end,
 	},
-	-- {
-	-- 	"nvim-neo-tree/neo-tree.nvim",
-	-- 	priority = 999,
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"nvim-tree/nvim-web-devicons",
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"3rd/image.nvim",
-	-- 	},
-	-- 	opts = {
-	-- 		window = {
-	-- 			mappings = {
-	-- 				["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
-	-- 			},
-	-- 		},
-	-- 	},
-	-- },
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		priority = 999,
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+			"3rd/image.nvim",
+		},
+		opts = {
+			window = {
+				mappings = {
+					["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
+				},
+			},
+			filesystem = {
+				hijack_netrw_behavior = "disabled",
+			},
+		},
+	},
 }
