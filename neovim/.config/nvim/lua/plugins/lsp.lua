@@ -42,7 +42,7 @@ return {
 						},
 					},
 				},
-				tsserver = {
+				ts_ls = {
 					init_options = {
 						plugins = {
 							{
@@ -61,7 +61,15 @@ return {
 					},
 				},
 			},
-			capabilities = {},
+			capabilities = {
+				textDocument = {
+					completion = {
+						completionItem = {
+							snippetSupport = true,
+						},
+					},
+				},
+			},
 			setup = {},
 		},
 		---@param opts PluginLspOpts
