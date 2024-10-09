@@ -1,10 +1,14 @@
 local vim = vim
 return {
 	{
-		"ESSO0428/nvim-html-css",
+		"Jezda1337/nvim-html-css",
 		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
 			"nvim-lua/plenary.nvim",
 		},
+		config = function()
+			require("html-css"):setup()
+		end,
 	},
 	{
 		"folke/lazydev.nvim",
@@ -25,6 +29,15 @@ return {
 			table.insert(opts.sources, {
 				name = "lazydev",
 				group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+			})
+			table.insert(opts.sources, {
+				name = "html-css",
+				option = {
+					enable_on = {
+						"html",
+					},
+					file_extensions = { "css", "sass", "less" },
+				},
 			})
 		end,
 	},
