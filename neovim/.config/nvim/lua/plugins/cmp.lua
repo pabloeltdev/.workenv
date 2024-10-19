@@ -1,14 +1,21 @@
 local vim = vim
 return {
 	{
-		"Jezda1337/nvim-html-css",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-lua/plenary.nvim",
+		{
+			"Jezda1337/nvim-html-css",
+			dependencies = {
+				{
+					"nvim-treesitter/nvim-treesitter",
+					opts = {
+						ensure_installed = { "html", "css" },
+					},
+				},
+				"nvim-lua/plenary.nvim",
+			},
+			config = function()
+				require("html-css"):setup()
+			end,
 		},
-		config = function()
-			require("html-css"):setup()
-		end,
 	},
 	{
 		"folke/lazydev.nvim",
@@ -24,22 +31,7 @@ return {
 	{ "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
 	{ -- optional completion source for require statements and module annotations
 		"hrsh7th/nvim-cmp",
-		opts = function(_, opts)
-			opts.sources = opts.sources or {}
-			table.insert(opts.sources, {
-				name = "lazydev",
-				group_index = 0, -- set group index to 0 to skip loading LuaLS completions
-			})
-			table.insert(opts.sources, {
-				name = "html-css",
-				option = {
-					enable_on = {
-						"html",
-					},
-					file_extensions = { "css", "sass", "less" },
-				},
-			})
-		end,
+		opts = {},
 	},
 	{
 		"roobert/tailwindcss-colorizer-cmp.nvim",
@@ -58,7 +50,6 @@ return {
 			{ "rafamadriz/friendly-snippets", lazy = true },
 		},
 		version = false, -- last release is way too old
-		event = "InsertEnter",
 		config = function()
 			local cmp = require("cmp")
 			cmp.setup({
@@ -82,6 +73,20 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "vsnip" },
 					{ name = "neorg" },
+					{
+						name = "html-css",
+						option = {
+							enable_on = {
+								"html",
+								"vue",
+							},
+							file_extensions = { "css", "sass", "less" },
+						},
+					},
+					{
+						name = "lazydev",
+						group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+					},
 				}, {
 					{ name = "buffer" },
 				}),
