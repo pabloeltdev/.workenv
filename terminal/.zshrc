@@ -28,18 +28,16 @@ autoload -Uz compinit && compinit
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Kitty sessions
-function kt-native() {
-  export PROJECT_DIR=$1
-  kitty --session ~/.config/kitty/sessions/native.conf
-}
-
-function kt-nuxt() {
-  export PROJECT_DIR=$1
-  kitty --session ~/.config/kitty/sessions/nuxt.conf
-}
-
-function kt-next() {
-  export PROJECT_DIR=$1
-  kitty --session ~/.config/kitty/sessions/next.conf
-}
+# Create a command of type 'kt-[session_name] [working_dir]' for each kitten session files 
+session_dir="$HOME/.config/kitty/sessions"
+for conf_file in "$session_dir"/*.conf; do
+    if [[ -f "$conf_file" ]]; then
+        # Extract the filename without the path and extension
+        session_name=$(basename "$conf_file" .conf)
+        # Dynamically create a command for each session file 
+        eval "function kt-$session_name() {
+          export PROJECT_DIR=\$1;
+          kitty --session $conf_file;
+        }"
+    fi
+done
