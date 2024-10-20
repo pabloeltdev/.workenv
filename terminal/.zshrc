@@ -28,6 +28,7 @@ autoload -Uz compinit && compinit
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+          # kitty --session $conf_file;
 # Create a command of type 'kt-[session_name] [working_dir]' for each kitten session files 
 session_dir="$HOME/.config/kitty/sessions"
 for conf_file in "$session_dir"/*.conf; do
@@ -37,7 +38,8 @@ for conf_file in "$session_dir"/*.conf; do
         # Dynamically create a command for each session file 
         eval "function kt-$session_name() {
           export PROJECT_DIR=\$1;
-          kitty --session $conf_file;
+          nohup kitty --session $conf_file >/dev/null 2>&1 &
+          exit
         }"
     fi
 done
