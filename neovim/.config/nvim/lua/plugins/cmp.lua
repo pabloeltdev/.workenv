@@ -81,6 +81,9 @@ return {
 								"vue",
 							},
 							file_extensions = { "css", "sass", "less" },
+							style_sheets = {
+								"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css",
+							},
 						},
 					},
 					{
