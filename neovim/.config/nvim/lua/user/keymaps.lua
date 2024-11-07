@@ -11,7 +11,7 @@ wk.add({
 	{ "<leader>fd", "<cmd>TodoTelescope<cr>", desc = "Todo list" },
 	{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File" },
 	{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Find code" },
-	{ "<leader>fg", "<cmd>Telescope notify<cr>", desc = "Notifications" },
+	{ "<leader>fn", "<cmd>Telescope notify<cr>", desc = "Notifications" },
 	------------------------------------------------------------------------------
 	{ "<leader>m", group = "Manage", icon = "" },
 	{ "<leader>mm", "<cmd>Masion<cr>", desc = "Mason" },
