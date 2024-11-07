@@ -2,44 +2,44 @@ return {
 	-- better code actions
 	{
 		"luckasRanarison/clear-action.nvim",
-		config = true,
+		opts = {},
 	},
 	-- helper signatures
 	{
 		"ray-x/lsp_signature.nvim",
 		event = "VeryLazy",
-		config = true,
+		opts = {},
 	},
 	-- auto close/rename tags
 	{
 		"windwp/nvim-ts-autotag",
 		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-		config = true,
+		opts = {},
 	},
 	{
 		"folke/todo-comments.nvim",
-		config = true,
+		opts = {},
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = true,
+		opts = {},
 	},
 	{
 		"kylechui/nvim-surround",
 		version = "*",
 		event = "VeryLazy",
-		config = true,
+		opts = {},
 	},
 	{
 		{ "echasnovski/mini.nvim", version = false },
-		{ "echasnovski/mini.surround", version = false, config = true },
-		{ "echasnovski/mini.pairs", version = false, config = true },
-		{ "echasnovski/mini.cursorword", version = false, config = true },
-		{ "echasnovski/mini.ai", version = false, config = true },
-		{ "echasnovski/mini.comment", version = false, config = true },
-		{ "echasnovski/mini.indentscope", version = false, config = true },
+		{ "echasnovski/mini.surround", version = false, opts = {} },
+		{ "echasnovski/mini.pairs", version = false, opts = {} },
+		{ "echasnovski/mini.cursorword", version = false, opts = {} },
+		{ "echasnovski/mini.ai", version = false, opts = {} },
+		{ "echasnovski/mini.comment", version = false, opts = {} },
+		{ "echasnovski/mini.indentscope", version = false, opts = {} },
 		{
 			"echasnovski/mini.basics",
 			version = false,

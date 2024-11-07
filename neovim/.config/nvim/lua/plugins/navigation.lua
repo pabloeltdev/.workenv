@@ -1,12 +1,16 @@
 return {
 	{
+		"folke/which-key.nvim",
+		opts = {},
+	},
+	{
 		"gsuuon/tshjkl.nvim",
-		config = true,
+		opts = {},
 	},
 	{
 		"akinsho/toggleterm.nvim",
 		version = "*",
-		config = true,
+		opts = {},
 	},
 	-- use jk for escape
 	{
