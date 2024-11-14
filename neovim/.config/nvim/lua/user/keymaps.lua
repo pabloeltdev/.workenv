@@ -3,7 +3,8 @@ wk.add({
 	------------------------------------------------------------------------------
 	{ "<leader>b", group = "Buffer" },
 	{ "<leader>ba", "<cmd>%bd<cr>", desc = "Close all buffers" },
-	{ "<leader>bb", "<cmd>bb<cr>", desc = "Close buffer" },
+	{ "<leader>bb", "<cmd>Telescope buffers<cr>", desc = "Close buffer" },
+	{ "<leader>bd", "<cmd>bd<cr>", desc = "Close buffer" },
 	{ "<leader>bk", "<cmd>%bd|e#<cr>", desc = "Close all other but keep this one" },
 	------------------------------------------------------------------------------
 	{ "<leader>f", group = "Telescope" },
